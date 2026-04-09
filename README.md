@@ -1,58 +1,100 @@
-# DIO - Trilha .NET - API e Entity Framework
-www.dio.me
+📞 Sistema de Atendimento - API (.NET + SQL)
+🚀 Desafio de Projeto
 
-## Desafio de projeto
-Para este desafio, você precisará usar seus conhecimentos adquiridos no módulo de API e Entity Framework, da trilha .NET da DIO.
+Este projeto foi desenvolvido com base nos conhecimentos adquiridos em .NET, API e integração com banco de dados, com o objetivo de simular um sistema real de atendimento.
 
-## Contexto
-Você precisa construir um sistema gerenciador de tarefas, onde você poderá cadastrar uma lista de tarefas que permitirá organizar melhor a sua rotina.
+🧩 Contexto
 
-Essa lista de tarefas precisa ter um CRUD, ou seja, deverá permitir a você obter os registros, criar, salvar e deletar esses registros.
+A proposta é construir um sistema de atendimento onde seja possível:
 
-A sua aplicação deverá ser do tipo Web API ou MVC, fique a vontade para implementar a solução que achar mais adequado.
+✔️ Cadastrar clientes
+✔️ Registrar atendimentos
+✔️ Consultar históricos
+✔️ Organizar dados em banco SQL
 
-A sua classe principal, a classe de tarefa, deve ser a seguinte:
+A aplicação foi desenvolvida como uma Web API, permitindo integração com outros sistemas futuramente.
 
-![Diagrama da classe Tarefa](diagrama.png)
+🏗️ Estrutura da Aplicação
 
-Não se esqueça de gerar a sua migration para atualização no banco de dados.
+O projeto segue uma arquitetura organizada:
 
-## Métodos esperados
-É esperado que você crie o seus métodos conforme a seguir:
+📂 Controllers → Controle das requisições
+📂 Models → Estrutura dos dados
+📂 Context → Conexão com banco de dados
+📂 Services → Regras de negócio
 
+🧠 Regras de Negócio
 
-**Swagger**
+🔹 Um cliente pode ter vários atendimentos
+🔹 Cada atendimento possui data, descrição e status
+🔹 Os dados são persistidos no banco SQL
+🔹 O sistema possui operações completas de CRUD
 
+⚙️ Tecnologias Utilizadas
 
-![Métodos Swagger](swagger.png)
+💻 .NET (C#)
+🗄️ SQL Server
+🧩 Entity Framework Core
+📑 Swagger
+📊 Planilhas (Excel)
+🔗 n8n (automação - em desenvolvimento)
+🤖 Integração com IA
 
+🔄 Status do Projeto
 
-**Endpoints**
+🚧 Em desenvolvimento
 
+✔️ Conexão com banco de dados
+✔️ Estrutura inicial da API
+✔️ Testes de inserção e consulta
 
-| Verbo  | Endpoint                | Parâmetro | Body          |
-|--------|-------------------------|-----------|---------------|
-| GET    | /Tarefa/{id}            | id        | N/A           |
-| PUT    | /Tarefa/{id}            | id        | Schema Tarefa |
-| DELETE | /Tarefa/{id}            | id        | N/A           |
-| GET    | /Tarefa/ObterTodos      | N/A       | N/A           |
-| GET    | /Tarefa/ObterPorTitulo  | titulo    | N/A           |
-| GET    | /Tarefa/ObterPorData    | data      | N/A           |
-| GET    | /Tarefa/ObterPorStatus  | status    | N/A           |
-| POST   | /Tarefa                 | N/A       | Schema Tarefa |
-
-Esse é o schema (model) de Tarefa, utilizado para passar para os métodos que exigirem
-
-```json
+📡 Endpoints da API
+🔹 Verbo	🔹 Endpoint	🔹 Parâmetro	🔹 Body
+GET	/Atendimento/{id}	id	N/A
+GET	/Atendimento/ObterTodos	N/A	N/A
+POST	/Atendimento	N/A	Schema Atendimento
+PUT	/Atendimento/{id}	id	Schema Atendimento
+DELETE	/Atendimento/{id}	id	N/A
+📄 Schema (Model) Atendimento
 {
   "id": 0,
-  "titulo": "string",
+  "cliente": "string",
   "descricao": "string",
-  "data": "2022-06-08T01:31:07.056Z",
-  "status": "Pendente"
+  "data": "2026-01-01T10:00:00",
+  "status": "Aberto"
 }
-```
+🧪 Testes
 
+Os testes estão sendo realizados com:
 
-## Solução
-O código está pela metade, e você deverá dar continuidade obedecendo as regras descritas acima, para que no final, tenhamos um programa funcional. Procure pela palavra comentada "TODO" no código, em seguida, implemente conforme as regras acima.
+🔸 Swagger
+🔸 Banco de dados SQL
+🔸 Planilhas para simulação
+
+🛠️ Configuração do Projeto
+
+Execute os comandos abaixo para criar o banco:
+
+dotnet ef migrations add InitialCreate
+dotnet ef database update
+
+📌 Não esqueça de configurar corretamente a string de conexão no appsettings.json.
+
+🎯 Objetivo do Projeto
+
+🎓 Praticar desenvolvimento com .NET
+🧠 Aprender integração com banco de dados
+📊 Simular um sistema real
+📁 Construir portfólio
+
+🚀 Próximos Passos
+
+🔐 Implementar autenticação
+⚙️ Melhorar regras de negócio
+🔗 Integrar com n8n
+🤖 Aplicar IA no atendimento
+🎨 Criar front-end
+
+📎 Observação
+
+Este projeto faz parte do meu processo de aprendizado e está em constante evolução 🚀
